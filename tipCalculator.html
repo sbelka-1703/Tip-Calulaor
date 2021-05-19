@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Tip Calculator</title>
+</head>
+<body style="text-align:center;" id="body">
+     
+    
+    <div class="backgorund">
+    
+    </div>
+
+    <h5>Tip Calculator</h5>
+
+    <label for="bill-amount" class="bill-amount-label">Bill Amount</label><p>
+    <input id='bill-amount' placeholder="$"><br>
+
+    <h3 id = select-tip-text> Select your Tip:</h3>
+
+    <button class="percent-button" type = "button" onClick="percentage = 15"; >15%</button>&nbsp;&nbsp;
+    <button class="percent-button" type  = "button" onClick="percentage = 20"; >20%</button>&nbsp;&nbsp;
+    <button class="percent-button"type = "button" onClick="percentage = 25"; >25%</button><br><p>
+
+    
+    
+
+
+
+
+        <div id='user-error' >
+
+        </div>
+    
+   
+    
+    
+
+
+    <input id='Custom-tip' placeholder="Custom tip"><br><p>
+
+    <button id= 'Calculate-button'>Calculate</button>
+
+
+
+    <div id='total-div' >
+
+    </div>
+     
+
+    
+    <script>
+
+    
+
+    //A global variable that is manipulated by html code, that changes the value of the variable depending which button is pressed(15,20 or 25)
+    var percentage 
+    
+
+    
+    function totalAmmount(){
+
+        var userError = document.getElementById('user-error')
+        userError.innerHTML = '';
+        var totalDiv = document.getElementById('total-div')
+        totalDiv.innerHTML = '';
+        
+       
+
+
+
+       //Gets the value from custom tip field  
+       var customTip = document.getElementById('Custom-tip').value;
+       
+       //If the user selects on of the percent buttons and leaves the custom tip blank 
+       if (customTip === ""){
+       var initialAmount =  document.getElementById("bill-amount").value;
+       var decimal = percentage / 100
+       var tip = initialAmount * decimal
+       }
+
+       //If user enters the custom tip amount in USD
+       else{
+         var initialAmount =  document.getElementById("bill-amount").value;
+         var tip = customTip
+       }
+
+       //======Error checking======
+
+       //If the user leaves the Bill Ammount blank and tip unselected
+       if (isNaN(tip) && initialAmount === ""){
+        var writeUserError = document.createElement('p')
+        writeUserError.innerHTML = 'Please enter your Bill Amount and select a tip'
+        userError.appendChild(writeUserError);
+        }
+        //If
+        else if (initialAmount !== "" && isNaN(tip)  ){
+         var writeUserError = document.createElement('p')
+         writeUserError.innerHTML = 'Please select a tip'
+         userError.appendChild(writeUserError);
+        }
+       
+       else{
+       var writeTotal = document.createElement('p')
+       writeTotal.innerText = 'Initial Bill: $' + initialAmount + '\n'+ 'Tip : $' + tip  + '\n' + '  Ammount Due: $' + (parseInt(tip) + parseInt(initialAmount))
+       totalDiv.appendChild(writeTotal);
+       }
+    
+    
+
+       
+
+       }
+
+      
+
+       var calculateButton = document.getElementById('Calculate-button')
+       calculateButton.addEventListener('click', totalAmmount);
+       
+    
+       
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

@@ -2,9 +2,14 @@
 
 
 #body{
- background-color:#290b5a;
+    
+   
+    
+    
+   
+    background-color:#290b5a;
 
-} 
+ } 
 
 
 h5{
@@ -12,15 +17,18 @@ h5{
     font-size: 2.5em;
 }
 
+
 label{
     color: rgb(255, 255, 255);
-    font-size: 1.5em;
-
 }
 
 #total-div{
     color:floralwhite;
     font-size: 2.5em;
+}
+
+.bill-amount-label{
+    font-size: 1.5em;
 }
 
 
@@ -49,13 +57,19 @@ label{
 }
 
 #select-tip-text{
-    color:floralwhite
+    color:floralwhite;
+    font-size: larger;
+}
+
+#user-error{
+    color: rgb(232, 248, 10);
+    font-size: larger;
 }
 
 .percent-button{
     
      margin: .001em;
-     padding: .3em 0.3em;
+     padding: 12px;
      font-size: 1.3em;
      font-weight: bold;
      background-color: #fff;
@@ -73,40 +87,30 @@ label{
 
 
 #Custom-tip{
-    padding: 8px;
+    padding: 17px;
     margin: 1px 0;
-    border: 3px solid white;
-    border-radius:8px;
-    width:10%;
-    box-sizing: border-box;
-    transition: .1s;
+    border: 2px solid rgb(173, 6, 250);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:20px;
+    width:8%;
     
 }
 
-#Custom-tip,select, textarea{
-    font-size: 1.3em;
-    font-weight: bold;
-    color: rgb(29, 29, 29)
+#Custom-tip:focus{
+     outline: none;
 }
-
-#Custom-tipt:focus{
-    border: 3px solid rgb(173, 6, 250);
-    box-shadow:0 0 8px 0 gb(173, 6, 250);
-    outline: none;
-
-}
-
 
 #Calculate-button{
      
      margin: .001em;
-     padding: .5em 0.5em;
+     padding: 16px;
+     width: 12%;
      font-size: 1.3em;
      font-weight: bold;
      background-color: #fff;
      border: 2px solid rgba(112,111,211,0);
      border-radius: 15px;
-    cursor: pointer;
+     cursor: pointer;
      outline: none;
      
     

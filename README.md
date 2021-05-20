@@ -4,7 +4,7 @@ This is a simple tip calculator that is written in HTML and JavaScript and style
 
 ## Installation
 
-Copy and paste the code into your favorite IDE and run the HTML file on your browser 
+Move the files to your favorite IDE and run the HTML file on your browser 
 
 ## Usage
 
